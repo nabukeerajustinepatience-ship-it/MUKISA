@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Geofrey Farm - Fresh poultry products, eggs, chicken, piggery products, maize, beans, and cassava in Gayaaza, Uganda">
+    <title>Geofrey Farm | Fresh Farm Products - Gayaaza, Uganda</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🌾 Geofrey Farm</h1>
+                <p>Fresh from Gayaaza, Uganda</p>
+            </div>
+            <button class="menu-btn" id="menuBtn">☰ Menu</button>
+            <nav id="mainNav">
+                <a href="index.html">🏠 Home</a>
+                <a href="products.html">📦 Products</a>
+                <a href="about.html">📖 About Us</a>
+                <a href="contact.html">📞 Contact</a>
+                <a href="checkout.html">🛒 Order Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Fresh Farm Products<br>Straight to Your Doorstep</h1>
+            <p>Eggs • Chicken • Piggery • Maize • Beans • Cassava</p>
+            <a href="products.html" class="btn btn-primary">Browse Products →</a>
+            <a href="checkout.html" class="btn btn-secondary">Order Now</a>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS SECTION -->
+    <div class="container">
+        <h2 class="section-title">Our Best Sellers</h2>
+        <div class="products-grid" id="featuredProducts">
+            <!-- Products will be loaded here by JavaScript -->
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>Fresh Eggs (Tray)</h3>
+                    <div class="product-price">UGX 15,000</div>
+                    <p class="product-description">Fresh local eggs from free-range chickens</p>
+                    <button class="btn btn-order" onclick="addToCart('Fresh Eggs', 15000)">Add to Order</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>Local Chicken (Whole)</h3>
+                    <div class="product-price">UGX 35,000</div>
+                    <p class="product-description">Tasty local chicken, perfect for family meals</p>
+                    <button class="btn btn-order" onclick="addToCart('Local Chicken', 35000)">Add to Order</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>Maize Flour (5kg)</h3>
+                    <div class="product-price">UGX 12,000</div>
+                    <p class="product-description">Pure ground maize flour for posho</p>
+                    <button class="btn btn-order" onclick="addToCart('Maize Flour', 12000)">Add to Order</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>Fresh Beans (1kg)</h3>
+                    <div class="product-price">UGX 5,000</div>
+                    <p class="product-description">Nutritious fresh beans from our farm</p>
+                    <button class="btn btn-order" onclick="addToCart('Fresh Beans', 5000)">Add to Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURES SECTION -->
+    <div class="container">
+        <div class="features">
+            <div class="feature">
+                <h3>🚚 Free Delivery</h3>
+                <p>Free delivery within Gayaaza and surrounding areas</p>
+            </div>
+            <div class="feature">
+                <h3>🌱 Farm Fresh</h3>
+                <p>Products straight from our farm to your table</p>
+            </div>
+            <div class="feature">
+                <h3>💰 Best Prices</h3>
+                <p>Direct from farm - no middlemen, better prices</p>
+            </div>
+            <div class="feature">
+                <h3>📞 Call to Order</h3>
+                <p>Call 0755248421 or 0770690288 for quick orders</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHY CHOOSE US -->
+    <div class="container bg-light" style="padding: 40px; border-radius: 10px; margin: 20px auto;">
+        <h2 class="section-title">Why Choose Geofrey Farm?</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <div>
+                <h3 style="color: #2E7D32;">✓ 100% Local</h3>
+                <p>Proudly Ugandan, serving Gayaaza and beyond</p>
+            </div>
+            <div>
+                <h3 style="color: #2E7D32;">✓ Quality Guaranteed</h3>
+                <p>All products inspected before delivery</p>
+            </div>
+            <div>
+                <h3 style="color: #2E7D32;">✓ Cash on Delivery</h3>
+                <p>Pay when you receive your order</p>
+            </div>
+            <div>
+                <h3 style="color: #2E7D32;">✓ Support Local</h3>
+                <p>Your purchase supports a Ugandan family farm</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌾 Geofrey Farm</h3>
+                    <p>Fresh poultry, piggery, and crop products from Gayaaza, Uganda.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📞 0755248421</p>
+                    <p>📞 0770690288</p>
+                    <p>📍 Gayaaza, Uganda</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="about.html" style="color: #F9A825;">About Us</a></p>
+                    <p><a href="products.html" style="color: #F9A825;">Products</a></p>
+                    <p><a href="contact.html" style="color: #F9A825;">Contact</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Geofrey Farm - Gayaaza, Uganda. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        if(menuBtn) {
+            menuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('show');
+            });
+        }
+        
+        // Shopping cart functions
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price, quantity: 1 });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(productName + ' added to your order!');
+            updateCartCount();
+        }
+        
+        function updateCartCount() {
+            let cartCount = document.getElementById('cartCount');
+            if(cartCount) {
+                cartCount.textContent = cart.length;
+            }
+        }
+        
+        updateCartCount();
+    </script>
+</body>
+</html>
