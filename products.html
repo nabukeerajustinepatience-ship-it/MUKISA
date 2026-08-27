@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Our Products - Fresh eggs, chicken, piggery products, maize, beans, cassava from Geofrey Farm in Gayaaza, Uganda">
+    <title>Our Products | Geofrey Farm - Gayaaza, Uganda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .filter-btn {
+            background: #eee;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .filter-btn.active {
+            background: #2E7D32;
+            color: white;
+        }
+        .filter-btn:hover {
+            background: #F9A825;
+            color: #1B5E20;
+        }
+        .no-products {
+            text-align: center;
+            padding: 50px;
+            background: white;
+            border-radius: 10px;
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🌾 Geofrey Farm</h1>
+                <p>Fresh from Gayaaza, Uganda</p>
+            </div>
+            <button class="menu-btn" id="menuBtn">☰ Menu</button>
+            <nav id="mainNav">
+                <a href="index.html">🏠 Home</a>
+                <a href="products.html">📦 Products</a>
+                <a href="about.html">📖 About Us</a>
+                <a href="contact.html">📞 Contact</a>
+                <a href="checkout.html">🛒 Order Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <div class="container">
+        <h1 class="section-title">Our Farm Products</h1>
+        <p class="text-center" style="margin-bottom: 20px;">Fresh from our farm to your table. Order today!</p>
+    </div>
+
+    <!-- CATEGORY FILTERS -->
+    <div class="container">
+        <div class="category-filter">
+            <button class="filter-btn active" data-category="all">All Products</button>
+            <button class="filter-btn" data-category="poultry">🐔 Poultry</button>
+            <button class="filter-btn" data-category="piggery">🐷 Piggery</button>
+            <button class="filter-btn" data-category="crops">🌽 Crops</button>
+        </div>
+    </div>
+
+    <!-- PRODUCTS GRID -->
+    <div class="container">
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- ORDER CALL TO ACTION -->
+    <div class="container" style="margin: 50px auto; text-align: center; background: #2E7D32; padding: 40px; border-radius: 10px; color: white;">
+        <h2>Ready to Place an Order?</h2>
+        <p style="margin: 15px 0;">Call us directly or use our online order form</p>
+        <a href="checkout.html" class="btn btn-primary" style="margin-right: 10px;">📝 Order Online</a>
+        <a href="tel:0755248421" class="btn btn-secondary">📞 Call 0755248421</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌾 Geofrey Farm</h3>
+                    <p>Fresh poultry, piggery, and crop products from Gayaaza, Uganda.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📞 0755248421</p>
+                    <p>📞 0770690288</p>
+                    <p>📍 Gayaaza, Uganda</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="about.html" style="color: #F9A825;">About Us</a></p>
+                    <p><a href="products.html" style="color: #F9A825;">Products</a></p>
+                    <p><a href="contact.html" style="color: #F9A825;">Contact</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Geofrey Farm - Gayaaza, Uganda. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        if(menuBtn) {
+            menuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('show');
+            });
+        }
+        
+        // PRODUCT DATABASE
+        const products = [
+            { id: 1, name: "Fresh Eggs (Tray of 30)", price: 15000, category: "poultry", description: "Fresh local eggs from free-range chickens", image: "eggs.jpg" },
+            { id: 2, name: "Local Chicken (Whole)", price: 35000, category: "poultry", description: "Tasty local chicken, perfect for roasting", image: "chicken.jpg" },
+            { id: 3, name: "Broiler Chicken (Whole)", price: 25000, category: "poultry", description: "Tender broiler chicken, ready to cook", image: "broiler.jpg" },
+            { id: 4, name: "Pork Meat (1kg)", price: 15000, category: "piggery", description: "Fresh pork from our farm", image: "pork.jpg" },
+            { id: 5, name: "Piglets (Live)", price: 120000, category: "piggery", description: "Healthy piglets for breeding", image: "piglet.jpg" },
+            { id: 6, name: "Lard (1kg)", price: 8000, category: "piggery", description: "Pure pig fat for cooking", image: "lard.jpg" },
+            { id: 7, name: "Maize (Fresh Cob)", price: 2000, category: "crops", description: "Sweet fresh maize", image: "maize.jpg" },
+            { id: 8, name: "Maize Flour (5kg)", price: 12000, category: "crops", description: "Pure ground maize flour for posho", image: "maizeflour.jpg" },
+            { id: 9, name: "Beans (1kg)", price: 5000, category: "crops", description: "Fresh nutritious beans", image: "beans.jpg" },
+            { id: 10, name: "Cassava (Fresh Tubers)", price: 3000, category: "crops", description: "Fresh cassava per kg", image: "cassava.jpg" },
+            { id: 11, name: "Cassava Flour (2kg)", price: 8000, category: "crops", description: "Pure cassava flour for baking", image: "cassavaflour.jpg" },
+            { id: 12, name: "Groundnuts (1kg)", price: 10000, category: "crops", description: "Fresh roasted groundnuts", image: "groundnuts.jpg" }
+        ];
+
+        // Shopping cart functions
+        
+        
+        // Display products
+        function displayProducts(category = 'all') {
+            const grid = document.getElementById('productsGrid');
+            if(!grid) return;
+            
+            let filteredProducts = products;
+            if(category !== 'all') {
+                filteredProducts = products.filter(p => p.category === category);
+            }
+            
+            if(filteredProducts.length === 0) {
+                grid.innerHTML = '<div class="no-products"><h3>No products found</h3><p>Check back soon for new products!</p></div>';
+                return;
+            }
+            
+            grid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card">
+                    <div style="background: #f0f0f0; height: 180px;// PRODUCTS LOADED FROM JSON FILE
+let products = [];
+
+// Load products from JSON file
+async function loadProducts() {
+    try {
+        const response = await fetch('products.json');
+        products = await response.json();
+        displayProducts('all');
+    } catch(error) {
+        console.error('Error loading products:', error);
+        // Fallback products if file fails to load
+        products = [
+            { id: 1, name: "Fresh Eggs (Tray of 30)", price: 15000, category: "poultry", description: "Fresh local eggs" },
+            { id: 2, name: "Local Chicken (Whole)", price: 35000, category: "poultry", description: "Tasty local chicken" },
+            { id: 3, name: "Maize Flour (5kg)", price: 12000, category: "crops", description: "Pure maize flour" }
+        ];
+        displayProducts('all');
+    }
+} display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">${product.category === 'poultry' ? '🐔' : product.category === 'piggery' ? '🐷' : '🌽'}</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <div class="product-price">UGX ${product.price.toLocaleString()}</div>
+                        <p class="product-description">${product.description}</p>
+                        <button class="btn btn-order" onclick="addToCart('${product.name.replace(/'/g, "\\'")}', ${product.price}, ${product.id})">
+                            Add to Order 🛒
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Category filter buttons
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const category = this.getAttribute('data-category');
+                displayProducts(category);
+            });
+        // Initial display - load products from JSON file
+loadProducts();
+    </script>
+</body>
+</html>
